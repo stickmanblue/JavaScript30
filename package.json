@@ -1,0 +1,23 @@
+{
+  "name": "js30",
+  "version": "1.0.0",
+  "description": "![](https://javascript30.com/images/JS3-social-share.png)",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server ./ -o -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:stickmanblue/JavaScript30.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stickmanblue/JavaScript30/issues"
+  },
+  "homepage": "https://github.com/wesbos/JavaScript30#readme",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
