@@ -104,6 +104,35 @@
   </div>
 
 <script>
+const checkboxes = Array.from(document.querySelectorAll('.inbox [type="checkbox"]'));
+
+let previousChecked;
+
+function handleCheck(e) {
+  
+  if (e.shiftKey && this.checked && previousChecked) {
+    let lower = Number(previousChecked.dataset.index);
+    let upper = Number(this.dataset.index);
+
+    if (previousChecked.dataset.index > this.dataset.index) {
+
+      const temp = lower;
+      lower = upper;
+      upper = temp;
+    }
+
+    const toUnCheck = [...checkboxes.slice(0, lower),...checkboxes.slice(upper+1)];
+    checkboxes.forEach(x => x.checked = toUnCheck.indexOf(x) === -1);
+  };
+
+  previousChecked = this;
+}
+
+checkboxes.forEach((checkbox, index) => {
+  checkbox.dataset.index=index;
+  checkbox.addEventListener('click', handleCheck);
+});
+
 </script>
 </body>
 </html>
